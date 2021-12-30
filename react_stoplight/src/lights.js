@@ -1,51 +1,50 @@
 import './lights.css'
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import Circles from './components/circles';
 
 
-const App = () => {
-  const [redLight, setredLight] = useState([]);
-  const [yellowLight, setyellowLight] = useState([]);
+const Light = () => {
+  const [redLight, setRedLight] = useState([]);
+  const [yellowLight, setYellowLight] = useState([]);
   const [greenLight, setGreenLight] = useState([]);
-  const [next, setnext] = useState([]);
-  setnext("red");
+  const [next, setNext] = useState([]);
+  setNext("red");
 
-  handeLightChange = () => {
+  const handeLightChange = () => {
     switch (next) {
       case "red":
-        setredLight("red"),
-        setyellowLight("white"),
+        setRedLight("red")
+        setYellowLight("white")
         setGreenLight("white")
-        setnext("green")
+        setNext("green")
         break;
       case "green":
-        setredLight("white"),
-        setyellowLight("white"),
+        setRedLight("white")
+        setYellowLight("white")
         setGreenLight("green")
-        setnext("green")
+        setNext("yellow")
         break;
-      case "yellow":
-        setredLight("white"),
-        setyellowLight("yellow"),
+      default:
+        setRedLight("white")
+        setYellowLight("yellow")
         setGreenLight("white")
-        setnext("green")
+        setNext("red")
         break;
     }
-
-  componentDidMount() {
+  }
+  useEffect(() => {
     setInterval(() => { 
       handeLightChange();
     }, 2000)
-  }
-};
-    
+  });
     return (
-        <><h1>Traffic light</h1>
+      <div>
+        <h1>Traffic light</h1>
         <Circles color={redLight} />
         <Circles color={yellowLight} />
-        <Circles color={greenLight} /></>
-
+        <Circles color={greenLight} />
+      </div>
     );
-}
+  }
 
-export default App;
+export default Light;
