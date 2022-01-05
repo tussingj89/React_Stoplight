@@ -2,7 +2,8 @@ import React from 'react';
 import './circles.css';
 
 function circles({color}) {
-    <div class="circles" style={color}></div>
+    return(
+    <div className="circle" style={{backgroundColor: color}}></div>)
 }
 
 export default circles;

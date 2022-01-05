@@ -1,6 +1,6 @@
 .light {
-    height: 300px;
-    width: 100px;
+    height: 400px;
+    width: 200px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
