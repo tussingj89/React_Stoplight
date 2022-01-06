@@ -4,11 +4,11 @@ import Circles from './components/circles';
 
 
 const Light = () => {
-  const [redLight, setRedLight] = useState("");
-  const [yellowLight, setYellowLight] = useState("");
-  const [greenLight, setGreenLight] = useState("");
-  const [next, setNext] = useState("");
-  setNext("red");
+  const [redLight, setRedLight] = useState("red");
+  const [yellowLight, setYellowLight] = useState("white");
+  const [greenLight, setGreenLight] = useState("white");
+  const [next, setNext] = useState("red");
+  
 
   const handeLightChange = () => {
     switch (next) {
@@ -37,10 +37,10 @@ const Light = () => {
       handeLightChange();
     }, 2000)
   });
-  setRedLight("red")
-  console.log(redLight)
-  console.log(yellowLight)
-  console.log(greenLight)
+  // setRedLight("red")
+  // console.log(redLight)
+  // console.log(yellowLight)
+  // console.log(greenLight)
     return (
       <div className="light">
         <h1>Traffic light</h1>
