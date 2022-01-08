@@ -33,14 +33,14 @@ const Light = () => {
     }
   }
   useEffect(() => {
-    setInterval(() => { 
+   const timeout = setTimeout(() => {
       handeLightChange();
     }, 2000)
+    return () => {
+      clearTimeout(timeout)
+    }
   });
-  // setRedLight("red")
-  // console.log(redLight)
-  // console.log(yellowLight)
-  // console.log(greenLight)
+
     return (
       <div className="light">
         <h1>Traffic light</h1>
