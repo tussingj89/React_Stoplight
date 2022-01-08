@@ -5,8 +5,8 @@ import Circles from './components/circles';
 
 const Light = () => {
   const [redLight, setRedLight] = useState("red");
-  const [yellowLight, setYellowLight] = useState("white");
-  const [greenLight, setGreenLight] = useState("white");
+  const [yellowLight, setYellowLight] = useState("grey");
+  const [greenLight, setGreenLight] = useState("grey");
   const [next, setNext] = useState("red");
   
 
@@ -14,20 +14,20 @@ const Light = () => {
     switch (next) {
       case "red":
         setRedLight("red")
-        setYellowLight("white")
-        setGreenLight("white")
+        setYellowLight("grey")
+        setGreenLight("grey")
         setNext("green")
         break;
       case "green":
-        setRedLight("white")
-        setYellowLight("white")
+        setRedLight("grey")
+        setYellowLight("grey")
         setGreenLight("green")
         setNext("yellow")
         break;
       default:
-        setRedLight("white")
+        setRedLight("grey")
         setYellowLight("yellow")
-        setGreenLight("white")
+        setGreenLight("grey")
         setNext("red")
         break;
     }
